@@ -84,7 +84,23 @@ export const offices: Office[] = [
     note: "iced chocolate + code",
     focus: "50% 35%",
   },
+  {
+    src: "/images/offices/career-board.jpg",
+    alt: "Manoela giving a thumbs up next to her laptop and a wall of sticky notes planning her career",
+    // TODO: where was this taken?
+    place: null,
+    note: "career board + thumbs up",
+    focus: "40% 40%",
+  },
+  {
+    src: "/images/offices/mulliri-cafe.jpg",
+    alt: "Laptop on a round wooden café table with a pink smoothie, palm trees outside the window",
+    // TODO: where was this taken?
+    place: null,
+    note: "smoothie + palm trees",
+    focus: "50% 70%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
-export const emptySlots = 2;
+export const emptySlots = 0;
