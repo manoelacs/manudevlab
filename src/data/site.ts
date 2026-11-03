@@ -14,8 +14,7 @@ export const site = {
 
   email: "hello@manudevlab.com",
   instagram: { handle: "@manoela_dev", url: "https://instagram.com/manoela_dev" },
-  // TODO: add your LinkedIn profile URL
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/in/manoelacs/" as string | null,
 
   photos: {
     // TODO: add a beach photo (shown on the home page, square works best)
