@@ -1,0 +1,86 @@
+export type ProductStatus = "Pilot" | "MVP" | "In development" | "Coming soon" | "Planned";
+
+export type Product = {
+  slug: string;
+  name: string;
+  audience: string;
+  status: ProductStatus;
+  description: string;
+  cta: string;
+  band: "sun" | "coral" | "sea";
+  mono?: boolean;
+  dark?: boolean;
+};
+
+export const products: Product[] = [
+  {
+    slug: "host-assistant",
+    name: "Host Assistant",
+    audience: "Airbnb hosts",
+    status: "Pilot",
+    description:
+      "An AI assistant that answers your guests' questions around the clock — and tells the cleaner which apartments to clean.",
+    cta: "Join the pilot",
+    band: "sun",
+  },
+  {
+    slug: "luggage-storage-durres",
+    name: "Luggage Storage Durrës",
+    audience: "Travelers in Durrës",
+    status: "MVP",
+    description:
+      "Drop your bags at a local shop and hit the beach. Book in seconds, get a 4-digit code, pay cash on arrival.",
+    cta: "Become a storage spot",
+    band: "coral",
+  },
+  {
+    slug: "digital-menus",
+    name: "Fun Digital Menus",
+    audience: "Restaurants in Albania",
+    status: "Coming soon",
+    description:
+      "Send a photo of your paper menu, get back a playful digital one — with short dish videos and star ratings.",
+    cta: "Get on the list",
+    band: "sea",
+  },
+  {
+    slug: "safezone",
+    name: "SafeZone",
+    audience: "People & therapists",
+    status: "In development",
+    description:
+      'An emotional-tracking companion: daily emotional log, therapy session prep, a therapist dashboard and a "life audit" radar.',
+    cta: "Ask about early access",
+    band: "sea",
+  },
+  {
+    slug: "albania-homes",
+    name: "Albania Homes",
+    audience: "Home buyers in Albania",
+    status: "In development",
+    description:
+      "Brokers paste a listing and AI pulls out the details; buyers just chat to find the place they want to live.",
+    cta: "Talk to the lab",
+    band: "sun",
+  },
+  {
+    slug: "ai-assistant-core",
+    name: "npm i @manudev/ai-assistant-core",
+    audience: "Developers",
+    status: "Planned",
+    description:
+      "The building block behind the lab's assistants — a reusable package to add AI assistant features to any app.",
+    cta: "Follow the build",
+    band: "coral",
+    mono: true,
+    dark: true,
+  },
+];
+
+export const sideQuests = [
+  "Nomad Cost Calculator",
+  "AI Trip Itinerary Generator",
+  "Surprisefy",
+  "Boarding-pass album",
+  "WiFi QR decoder",
+];

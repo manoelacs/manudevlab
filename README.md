@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# manudevlab.com
 
-## Getting Started
+The website for **Manudev Lab**, a small software lab run by Manoela Cassia dos Santos. It has two pages:
 
-First, run the development server:
+- `/` shows the lab, its products and how to get in touch
+- `/about` is the "Who I am" page
+
+Built with Next.js (App Router) and TypeScript. The fonts are self-hosted through Fontsource.
+
+## Run it locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to edit things
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | File |
+| --- | --- |
+| Email, Instagram, LinkedIn, photos | `src/data/site.ts` |
+| Products and side quests | `src/data/products.ts` |
+| Home page | `src/app/page.tsx` |
+| Who I am page | `src/app/about/page.tsx` |
+| Colors, fonts and styles | `src/app/globals.css` |
 
-## Learn More
+### Adding the photos
 
-To learn more about Next.js, take a look at the following resources:
+1. Put the files in `public/images/`, for example `beach.jpg` and `portrait.jpg`.
+2. In `src/data/site.ts`, set `photos.beach = "/images/beach.jpg"` and `photos.portrait = "/images/portrait.jpg"`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Until you do this, each photo spot shows a labelled placeholder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+This is a standard Next.js app, so it deploys to Vercel without extra setup:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Import the repository in Vercel.
+2. Add `manudevlab.com` under Project → Settings → Domains.
