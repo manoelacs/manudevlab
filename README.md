@@ -20,7 +20,8 @@ Then open http://localhost:3000.
 
 | What | File |
 | --- | --- |
-| Email, Instagram, LinkedIn, photos | `src/data/site.ts` |
+| Instagram, LinkedIn, photos | `src/data/site.ts` |
+| Contact email (hidden from bots) | `src/components/EmailButton.tsx` |
 | Products and side quests | `src/data/products.ts` |
 | Home page | `src/app/page.tsx` |
 | Who I am page | `src/app/about/page.tsx` |

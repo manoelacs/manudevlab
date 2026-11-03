@@ -3,6 +3,7 @@ import Image from "next/image";
 import { offices, emptySlots } from "@/data/offices";
 import { site } from "@/data/site";
 import { Wave } from "@/components/Wave";
+import { EmailButton } from "@/components/EmailButton";
 
 export const metadata: Metadata = {
   title: "Offices around the world",
@@ -83,9 +84,7 @@ export default function OfficesPage() {
             Know a café with good Wi-Fi and a sea view? Send it my way.
           </h2>
           <div className="btn-row">
-            <a href={`mailto:${site.email}?subject=A%20table%20for%20the%20lab`} className="btn btn-sun">
-              Recommend a spot
-            </a>
+            <EmailButton label="Recommend a spot" subject="A table for the lab" />
             <a href={site.instagram.url} className="btn btn-outline-light" target="_blank" rel="noreferrer">
               Follow the trip on Instagram
             </a>

@@ -131,6 +131,12 @@ figure {
 .btn:hover {
   transform: translateY(-2px);
 }
+button.btn {
+  font: inherit;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+}
 .btn-sm {
   min-height: 44px;
   padding: 10px 20px;

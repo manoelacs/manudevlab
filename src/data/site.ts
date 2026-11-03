@@ -12,7 +12,8 @@ export const site = {
   company: "Manoela Cassia dos Santos Serviços Tecnológicos",
   currentCity: "Durrës, Albania",
 
-  email: "hello@manudevlab.com",
+  // The contact email lives in src/components/EmailButton.tsx, split into parts
+  // so spam bots can't read it from the page HTML.
   instagram: { handle: "@manoela_dev", url: "https://instagram.com/manoela_dev" },
   linkedin: "https://www.linkedin.com/in/manoelacs/" as string | null,
 
