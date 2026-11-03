@@ -44,7 +44,13 @@ export const offices: Office[] = [
     note: "where it all started · 2021",
     focus: "55% 50%",
   },
+  {
+    src: "/images/offices/fortaleza.jpg",
+    alt: "Manoela smiling at a white desk with her laptop open to code",
+    place: "Fortaleza, Brazil",
+    focus: "50% 70%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
-export const emptySlots = 2;
+export const emptySlots = 1;
