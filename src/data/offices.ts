@@ -50,7 +50,20 @@ export const offices: Office[] = [
     place: "Fortaleza, Brazil",
     focus: "50% 70%",
   },
+  {
+    src: "/images/offices/nijmegen.jpg",
+    alt: "Manoela eating lunch at a garden table next to her laptop",
+    place: "Nijmegen, Netherlands",
+    note: "lunch break on the terrace",
+    focus: "50% 90%",
+  },
+  {
+    src: "/images/offices/izmir.jpg",
+    alt: "Laptop on a stand with keyboard, mouse and headphones on a wooden desk",
+    place: "İzmir, Turkey",
+    focus: "50% 35%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
-export const emptySlots = 1;
+export const emptySlots = 2;
