@@ -23,7 +23,14 @@ export const offices: Office[] = [
     note: "coffee + Host Assistant",
     focus: "40% 50%",
   },
+  {
+    src: "/images/offices/amsterdam-library.jpg",
+    alt: "Laptop on a library table overlooking the Amsterdam harbour and the green NEMO building",
+    place: "Amsterdam, Netherlands",
+    note: "library with a harbour view",
+    focus: "50% 52%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
-export const emptySlots = 2;
+export const emptySlots = 1;
