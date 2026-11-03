@@ -210,9 +210,14 @@ export default function Home() {
             <p style={{ fontSize: 18, lineHeight: 1.6 }}>
               {site.owner} — Brazilian senior frontend engineer and digital nomad.
             </p>
-            <Link href="/about" className="btn btn-dark" style={{ alignSelf: "flex-start" }}>
-              Read my story <ArrowRight />
-            </Link>
+            <div className="btn-row">
+              <Link href="/about" className="btn btn-dark">
+                Read my story <ArrowRight />
+              </Link>
+              <Link href="/offices" className="btn btn-outline">
+                See all my offices
+              </Link>
+            </div>
           </div>
         </div>
       </section>

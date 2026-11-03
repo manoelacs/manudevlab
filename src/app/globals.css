@@ -664,6 +664,66 @@ figure {
   flex: 0 0 auto;
 }
 
+/* ---------- offices gallery ---------- */
+.office-wall {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: 48px 36px;
+  padding-block: 12px;
+}
+.office {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+.office:hover {
+  transform: rotate(0deg) scale(1.02) !important;
+}
+.office-photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--lagoon);
+}
+.office-photo-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(45deg, #fdf0d5, #fdf0d5 12px, #fbe7c2 12px, #fbe7c2 24px);
+  border: 2px dashed var(--muted);
+  font-size: 14px;
+  color: var(--muted);
+}
+.office-empty {
+  background: #fffaf0;
+  border-style: dashed;
+  border-color: var(--muted);
+}
+.office-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+.office-place {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 20px;
+}
+.office-empty .office-place {
+  color: var(--muted);
+}
+.office-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
 /* ---------- footer ---------- */
 .footer {
   background: var(--ink);
@@ -698,7 +758,8 @@ figure {
     scroll-behavior: auto;
   }
   .btn,
-  .tag {
+  .tag,
+  .office {
     transition: none;
   }
 }

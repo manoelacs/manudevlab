@@ -20,6 +20,9 @@ export function Nav() {
           <Link href="/#products" className="nav-link">
             Products
           </Link>
+          <Link href="/offices" className="nav-link" aria-current={pathname === "/offices" ? "page" : undefined}>
+            Offices
+          </Link>
           <Link href="/about" className="nav-link" aria-current={onAbout ? "page" : undefined}>
             Who I am
           </Link>
