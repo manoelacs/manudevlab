@@ -63,6 +63,27 @@ export const offices: Office[] = [
     place: "İzmir, Turkey",
     focus: "50% 35%",
   },
+  {
+    src: "/images/offices/cape-town-2.jpg",
+    alt: "Laptop on a stand with keyboard and headphones on a wooden desk by a bright window",
+    place: "Cape Town, South Africa",
+    note: "the window-light desk",
+    focus: "50% 45%",
+  },
+  {
+    src: "/images/offices/izmir-christmas.jpg",
+    alt: "Manoela in a Christmas hat smiling in front of her laptop",
+    place: "İzmir, Turkey",
+    note: "Christmas at the desk",
+    focus: "50% 30%",
+  },
+  {
+    src: "/images/offices/tirana.jpg",
+    alt: "Laptop on a wooden café table next to an iced chocolate drink, with plants behind",
+    place: "Tirana, Albania",
+    note: "iced chocolate + code",
+    focus: "50% 35%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
