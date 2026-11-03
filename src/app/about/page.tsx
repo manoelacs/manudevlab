@@ -60,7 +60,7 @@ export default function AboutPage() {
             />
             <Polaroid
               src={site.photos.portrait}
-              alt="Portrait of Manoela"
+              alt="Manoela smiling in a sun hat, sitting on a wall above the Adriatic sea"
               placeholder="[YOUR PORTRAIT]"
               caption="somewhere on the Adriatic"
               aspect="portrait"

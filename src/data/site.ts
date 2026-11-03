@@ -19,7 +19,7 @@ export const site = {
   photos: {
     // TODO: add a beach photo (shown on the home page, square works best)
     beach: null as string | null,
-    // TODO: add a portrait (shown on the "Who I am" page, 4:5 works best)
-    portrait: null as string | null,
+    // Portrait shown on the "Who I am" page (4:5 frame)
+    portrait: "/images/portrait.jpg" as string | null,
   },
 };
