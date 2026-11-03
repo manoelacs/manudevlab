@@ -37,7 +37,14 @@ export const offices: Office[] = [
     note: "Table Mountain out the window",
     focus: "50% 55%",
   },
+  {
+    src: "/images/offices/first-setup.jpg",
+    alt: "Manoela's first coding setup: a small laptop raised on a wooden box next to a pink monitor showing code",
+    place: "My first setup",
+    note: "where it all started · 2021",
+    focus: "55% 50%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
-export const emptySlots = 0;
+export const emptySlots = 2;
