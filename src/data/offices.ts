@@ -30,7 +30,14 @@ export const offices: Office[] = [
     note: "library with a harbour view",
     focus: "50% 52%",
   },
+  {
+    src: "/images/offices/cape-town.jpg",
+    alt: "Laptop by a window looking out over Cape Town towards Devil's Peak and Table Mountain",
+    place: "Cape Town, South Africa",
+    note: "Table Mountain out the window",
+    focus: "50% 55%",
+  },
 ];
 
 /** How many empty "next stop" frames to show after the photos. */
-export const emptySlots = 1;
+export const emptySlots = 0;
