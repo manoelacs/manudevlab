@@ -191,9 +191,10 @@ export default function Home() {
       <section className="on-sun">
         <div className="container split" style={{ paddingBlock: 80, gap: 56 }}>
           <Polaroid
-            src={site.photos.beach}
-            alt="Manoela working on her laptop by the beach"
-            placeholder="[YOUR BEACH PHOTO]"
+            src={site.photos.office}
+            alt="Manoela smiling at a café table with her laptop and a coffee"
+            placeholder="[YOUR PHOTO]"
+            objectPosition="40% 50%"
             caption="office of the day ☼"
             aspect="square"
             tilt={-4}

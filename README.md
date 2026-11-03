@@ -28,8 +28,8 @@ Then open http://localhost:3000.
 
 ### Adding the photos
 
-1. Put the files in `public/images/`, for example `beach.jpg` and `portrait.jpg`.
-2. In `src/data/site.ts`, set `photos.beach = "/images/beach.jpg"` and `photos.portrait = "/images/portrait.jpg"`.
+1. Put the files in `public/images/`, for example `office.jpg` and `portrait.jpg`.
+2. In `src/data/site.ts`, set `photos.office = "/images/office.jpg"` and `photos.portrait = "/images/portrait.jpg"`.
 
 Until you do this, each photo spot shows a labelled placeholder.
 

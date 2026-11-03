@@ -2,7 +2,7 @@
  * Site-wide settings. Edit this file to update contact links and photos.
  *
  * Photos: drop the image files into /public/images and set the paths below,
- * e.g. beach: "/images/beach.jpg". While a path is null, a placeholder shows.
+ * e.g. office: "/images/office.jpg". While a path is null, a placeholder shows.
  */
 export const site = {
   name: "Manudev Lab",
@@ -17,8 +17,8 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/manoelacs/" as string | null,
 
   photos: {
-    // TODO: add a beach photo (shown on the home page, square works best)
-    beach: null as string | null,
+    // "Office of the day" photo on the home page (square frame)
+    office: "/images/office.jpg" as string | null,
     // Portrait shown on the "Who I am" page (4:5 frame)
     portrait: "/images/portrait.jpg" as string | null,
   },
