@@ -24,16 +24,6 @@ export const products: Product[] = [
     band: "sun",
   },
   {
-    slug: "luggage-storage-durres",
-    name: "Luggage Storage Durrës",
-    audience: "Travelers in Durrës",
-    status: "MVP",
-    description:
-      "Drop your bags at a local shop and hit the beach. Book in seconds, get a 4-digit code, pay cash on arrival.",
-    cta: "Become a storage spot",
-    band: "coral",
-  },
-  {
     slug: "digital-menus",
     name: "Fun Digital Menus",
     audience: "Restaurants in Albania",
@@ -41,16 +31,6 @@ export const products: Product[] = [
     description:
       "Send a photo of your paper menu, get back a playful digital one — with short dish videos and star ratings.",
     cta: "Get on the list",
-    band: "sea",
-  },
-  {
-    slug: "safezone",
-    name: "SafeZone",
-    audience: "People & therapists",
-    status: "In development",
-    description:
-      'An emotional-tracking companion: daily emotional log, therapy session prep, a therapist dashboard and a "life audit" radar.',
-    cta: "Ask about early access",
     band: "sea",
   },
   {
