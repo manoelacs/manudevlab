@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const links = [
+  { href: "/#services", label: "Services" },
+  { href: "/#products", label: "Products" },
+  { href: "/offices", label: "Offices", page: "/offices" },
+  { href: "/about", label: "About", page: "/about" },
+];
+
 export function Nav() {
   const pathname = usePathname();
-  const onAbout = pathname === "/about";
 
   return (
     <header className="nav-wrap">
@@ -17,17 +23,18 @@ export function Nav() {
           <span className="logo-word">manudev lab</span>
         </Link>
         <div className="nav-links">
-          <Link href="/#products" className="nav-link">
-            Products
-          </Link>
-          <Link href="/offices" className="nav-link" aria-current={pathname === "/offices" ? "page" : undefined}>
-            Offices
-          </Link>
-          <Link href="/about" className="nav-link" aria-current={onAbout ? "page" : undefined}>
-            Who I am
-          </Link>
-          <Link href={onAbout ? "#say-hi" : "/#contact"} className="btn btn-dark btn-sm">
-            {onAbout ? "Say hi" : "Let's build"}
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="nav-link"
+              aria-current={l.page && pathname === l.page ? "page" : undefined}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Link href={pathname === "/about" ? "#say-hi" : "/#contact"} className="btn btn-dark btn-sm">
+            Start a project
           </Link>
         </div>
       </nav>

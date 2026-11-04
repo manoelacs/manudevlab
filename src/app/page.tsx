@@ -1,221 +1,212 @@
 import Link from "next/link";
-import { products, sideQuests } from "@/data/products";
+import Image from "next/image";
+import { products } from "@/data/products";
+import { services, process, facts, type ServiceIcon } from "@/data/services";
 import { site } from "@/data/site";
 import { Wave } from "@/components/Wave";
-import { Polaroid } from "@/components/Polaroid";
 import { ContactButtons } from "@/components/ContactButtons";
-import { ArrowRight, Chat, Code, Compass, Plane, Sun } from "@/components/Icons";
+import {
+  ArrowRight,
+  Browser,
+  Chat,
+  Check,
+  Code,
+  Dashboard,
+  Languages,
+  MapPin,
+  Phone,
+} from "@/components/Icons";
 
-const focus = [
-  {
-    title: "AI assistants",
-    text: "Assistants that answer guests and customers from a business's own information — so owners can go to the beach.",
-    icon: <Chat />,
-    color: "var(--sun)",
-  },
-  {
-    title: "Made for small markets",
-    text: "The Balkans and other small countries get overlooked. I build for them first, in their own language.",
-    icon: <Compass />,
-    color: "var(--coral)",
-  },
-  {
-    title: "Web & mobile that ships",
-    text: "React, Next.js, TypeScript, Flutter and Supabase — polished by a senior frontend engineer.",
-    icon: <Code />,
-    color: "var(--lagoon)",
-  },
-];
+const serviceIcons: Record<ServiceIcon, React.ReactNode> = {
+  chat: <Chat size={24} />,
+  browser: <Browser />,
+  dashboard: <Dashboard />,
+  phone: <Phone />,
+  code: <Code size={24} />,
+  languages: <Languages />,
+};
+
+const statusClass: Record<string, string> = {
+  Pilot: "badge badge-live",
+  MVP: "badge badge-live",
+  "In development": "badge",
+  "Coming soon": "badge badge-soon",
+  Planned: "badge badge-soon",
+};
 
 export default function Home() {
   return (
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="container split">
-          <div className="split-main stack" style={{ gap: 26 }}>
-            <p className="location-pill">
-              <Sun /> now coding from: {site.currentCity}
-            </p>
-            <h1 className="h1">
-              Code from
-              <br />
-              the <span className="highlight">coast.</span>
+        <div className="container hero-grid">
+          <div className="stack" style={{ gap: 24 }}>
+            <p className="eyebrow-pill">Independent software studio</p>
+            <h1 className="h1-pro">
+              AI &amp; web products for small businesses and <span className="underline-sun">growing teams.</span>
             </h1>
             <p className="lead">
-              Manudev Lab is a tiny software lab run by a traveling developer. I build AI-powered products for hosts,
-              small businesses and small-country markets — usually a few steps from the sea.
+              Manudev Lab designs and builds AI assistants, websites, web apps and mobile apps — led by a senior
+              frontend engineer, from idea to launch.
             </p>
             <div className="btn-row">
-              <Link href="#products" className="btn btn-dark">
-                Explore the products <ArrowRight />
+              <Link href="#contact" className="btn btn-dark">
+                Start a project <ArrowRight />
               </Link>
-              <Link href="/about" className="btn btn-outline">
-                Meet the traveler
+              <Link href="#services" className="btn btn-outline">
+                See services
               </Link>
             </div>
           </div>
 
-          <div className="split-side hero-art">
-            <div
-              className="blob"
-              aria-hidden="true"
-              style={{ width: 340, height: 340, background: "var(--sun)", top: 10, right: 0 }}
-            />
-            <div
-              className="blob"
-              aria-hidden="true"
-              style={{ width: 120, height: 120, background: "var(--coral)", bottom: 10, left: 10 }}
-            />
-            <div className="pass" role="img" aria-label="Boarding pass from Maceió to Albania for Manoela">
-              <div className="pass-body">
-                <div className="pass-top">
-                  <span>BOARDING PASS</span>
-                  <span style={{ color: "var(--sea)" }}>
-                    <Plane />
-                  </span>
-                </div>
-                <div className="pass-route">
-                  <div className="stack">
-                    <span className="pass-code">MCZ</span>
-                    <span className="pass-city">Maceió</span>
-                  </div>
-                  <span className="pass-dash" />
-                  <div className="stack" style={{ textAlign: "right" }}>
-                    <span className="pass-code">TIA</span>
-                    <span className="pass-city">Albania</span>
-                  </div>
-                </div>
-                <dl className="pass-grid">
-                  <div>
-                    <dt>PASSENGER</dt>
-                    <dd>MANOELA C. SANTOS</dd>
-                  </div>
-                  <div>
-                    <dt>FLIGHT</dt>
-                    <dd>ML-2026</dd>
-                  </div>
-                  <div>
-                    <dt>GATE</dt>
-                    <dd>AI / LLM</dd>
-                  </div>
-                  <div>
-                    <dt>SEAT</dt>
-                    <dd>Frontend · window</dd>
-                  </div>
-                </dl>
-              </div>
-              <div className="pass-stub">&lt;build /&gt; · SHIP</div>
+          <figure className="hero-photo">
+            <div className="hero-photo-frame">
+              {site.photos.office ? (
+                <Image
+                  src={site.photos.office}
+                  alt="Manoela working at a café table with her laptop"
+                  fill
+                  sizes="(max-width: 900px) 90vw, 440px"
+                  style={{ objectFit: "cover", objectPosition: "35% 50%" }}
+                  preload
+                />
+              ) : null}
             </div>
+            <figcaption className="hero-badge">
+              <MapPin />
+              <span>
+                <strong>Manoela Cassia dos Santos</strong>
+                <br />
+                Founder · working from {site.currentCity}
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* FACTS STRIP */}
+      <section className="facts" aria-label="At a glance">
+        <ul className="container facts-list">
+          {facts.map((f) => (
+            <li key={f}>
+              <Check /> {f}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="section-pro">
+        <div className="container stack" style={{ gap: 40 }}>
+          <div className="section-head">
+            <p className="eyebrow">Services</p>
+            <h2 className="h2">What you can hire the lab for</h2>
+            <p className="lead" style={{ fontSize: 18 }}>
+              One senior developer, start to finish — no hand-offs between agencies and freelancers.
+            </p>
+          </div>
+          <div className="grid-3">
+            {services.map((s) => (
+              <article key={s.title} className="service-card">
+                <span className="service-icon">{serviceIcons[s.icon]}</span>
+                <h3 className="service-title">{s.title}</h3>
+                <p className="card-text">{s.description}</p>
+                <p className="service-for">
+                  <span>Good for</span> {s.goodFor}
+                </p>
+              </article>
+            ))}
+          </div>
+          <div className="services-cta">
+            <p>Not sure which one you need? Describe the problem and I&apos;ll suggest the simplest fix.</p>
+            <Link href="#contact" className="btn btn-dark">
+              Get a free intro call <ArrowRight />
+            </Link>
           </div>
         </div>
       </section>
 
       <Wave direction="down" />
 
-      {/* FOCUS */}
-      <section className="on-sea section">
-        <div className="container stack" style={{ gap: 44 }}>
-          <div className="stack" style={{ gap: 10 }}>
-            <p className="eyebrow">{"// the itinerary"}</p>
-            <h2 className="h2" style={{ maxWidth: 720 }}>
-              Building for the places I actually live in.
-            </h2>
+      {/* PROCESS */}
+      <section className="on-sea">
+        <div className="container stack" style={{ paddingBlock: "40px 88px", gap: 40 }}>
+          <div className="section-head">
+            <p className="eyebrow">How it works</p>
+            <h2 className="h2">From first call to launch</h2>
           </div>
-          <div className="grid-cards">
-            {focus.map((f) => (
-              <div key={f.title} className="focus-card">
-                <span className="icon-dot" style={{ background: f.color }}>
-                  {f.icon}
-                </span>
-                <h3 className="card-title">{f.title}</h3>
-                <p className="card-text">{f.text}</p>
-              </div>
+          <ol className="process">
+            {process.map((p) => (
+              <li key={p.step} className="process-step">
+                <span className="process-num mono">{p.step}</span>
+                <h3 className="process-title">{p.title}</h3>
+                <p className="process-text">{p.text}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       <Wave direction="up" />
 
       {/* PRODUCTS */}
-      <section id="products" className="section">
-        <div className="container stack" style={{ gap: 44 }}>
-          <div className="stack" style={{ gap: 10, maxWidth: 680 }}>
-            <p className="eyebrow">{"// packed in the backpack"}</p>
-            <h2 className="h2">What I&apos;m building</h2>
+      <section id="products" className="section-pro" style={{ paddingTop: 48 }}>
+        <div className="container stack" style={{ gap: 40 }}>
+          <div className="section-head">
+            <p className="eyebrow">Products</p>
+            <h2 className="h2">Built in the lab</h2>
             <p className="lead" style={{ fontSize: 18 }}>
-              Every product started with a real problem I ran into on the road.
+              Alongside client work, the lab builds its own products for hosts, restaurants and small markets.
             </p>
           </div>
-
-          <div className="grid-cards">
+          <div className="grid-2">
             {products.map((p) => (
-              <article key={p.slug} className={`tag${p.dark ? " tag-dark" : ""}`}>
-                <div className={`tag-band band-${p.band}`}>
-                  <span>DEST · {p.audience}</span>
-                  <span className="tag-hole" aria-hidden="true" />
+              <article key={p.slug} className={`product-card${p.dark ? " product-dark" : ""}`}>
+                <div className="product-top">
+                  <span className={statusClass[p.status] ?? "badge"}>{p.status}</span>
+                  <span className="product-audience">{p.audience}</span>
                 </div>
-                <div className="tag-body">
-                  <span
-                    className={`stamp${p.status === "Coming soon" || p.status === "Planned" ? " stamp-soon" : ""}`}
-                  >
-                    {p.status}
-                  </span>
-                  <h3 className={p.mono ? "tag-title-mono" : "tag-title"}>{p.name}</h3>
-                  <p className="card-text">{p.description}</p>
-                  <a href="#contact" className="tag-cta">
-                    {p.cta} →
-                  </a>
-                </div>
+                <h3 className={p.mono ? "tag-title-mono" : "service-title"} style={{ fontSize: p.mono ? 18 : 24 }}>
+                  {p.name}
+                </h3>
+                <p className="card-text">{p.description}</p>
+                <a href="#contact" className="product-cta">
+                  {p.cta} →
+                </a>
               </article>
             ))}
-          </div>
-
-          <div className="side-quests">
-            <h3 className="card-title" style={{ fontSize: 22 }}>
-              Side quests
-            </h3>
-            <ul className="chips">
-              {sideQuests.map((q) => (
-                <li key={q} className="chip">
-                  {q}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
 
-      {/* FOUNDER */}
+      {/* ABOUT STRIP */}
       <section className="on-sun">
-        <div className="container split" style={{ paddingBlock: 80, gap: 56 }}>
-          <Polaroid
-            src={site.photos.office}
-            alt="Manoela smiling at a café table with her laptop and a coffee"
-            placeholder="[YOUR PHOTO]"
-            objectPosition="40% 50%"
-            caption="office of the day ☼"
-            aspect="square"
-            tilt={-4}
-          />
-          <div className="split-main stack" style={{ gap: 22, flexBasis: 480 }}>
+        <div className="container about-strip">
+          <div className="about-photo">
+            {site.photos.portrait ? (
+              <Image
+                src={site.photos.portrait}
+                alt="Portrait of Manoela above the Adriatic sea"
+                fill
+                sizes="200px"
+                style={{ objectFit: "cover", objectPosition: "65% 35%" }}
+              />
+            ) : null}
+          </div>
+          <div className="stack" style={{ gap: 16, flex: "999 1 420px", minWidth: 0 }}>
             <p className="mono" style={{ fontSize: 14 }}>
-              {"// the person behind the lab"}
+              Who&apos;s behind the lab
             </p>
-            <p className="quote">
-              &ldquo;Five countries, one laptop, and a lot of beaches. I build for the cities I land in — then make it
-              work everywhere.&rdquo;
-            </p>
-            <p style={{ fontSize: 18, lineHeight: 1.6 }}>
-              {site.owner} — Brazilian senior frontend engineer and digital nomad.
+            <p className="about-quote">
+              I&apos;m Manoela — a Brazilian senior frontend engineer who has lived and worked in five countries. I
+              build for the places I live in, then make it work everywhere.
             </p>
             <div className="btn-row">
               <Link href="/about" className="btn btn-dark">
-                Read my story <ArrowRight />
+                About me <ArrowRight />
               </Link>
               <Link href="/offices" className="btn btn-outline">
-                See all my offices
+                See where I work from
               </Link>
             </div>
           </div>
@@ -224,15 +215,28 @@ export default function Home() {
 
       {/* CONTACT */}
       <section id="contact" className="on-sea">
-        <div className="container stack" style={{ paddingBlock: 96, gap: 24, alignItems: "flex-start" }}>
-          <p className="eyebrow">{"// next stop"}</p>
-          <h2 className="display" style={{ fontSize: "clamp(40px, 5.6vw, 72px)", lineHeight: 1, maxWidth: 860 }}>
-            Let&apos;s build something by the sea.
-          </h2>
-          <p style={{ fontSize: 19, lineHeight: 1.6, color: "var(--foam)", maxWidth: 620 }}>
-            Hosts, restaurants, small businesses and teams — write in English, Portuguese or a little Albanian.
-          </p>
-          <ContactButtons />
+        <div className="container contact-grid">
+          <div className="stack" style={{ gap: 20 }}>
+            <p className="eyebrow">Start a project</p>
+            <h2 className="display" style={{ fontSize: "clamp(36px, 5vw, 60px)", lineHeight: 1.05 }}>
+              Tell me what you want to build.
+            </h2>
+            <p style={{ fontSize: 19, lineHeight: 1.6, color: "var(--foam)", maxWidth: 560 }}>
+              Write in English or Portuguese. You&apos;ll get a reply with next steps — no obligation.
+            </p>
+            <ContactButtons showLinkedIn />
+          </div>
+          <ul className="contact-list">
+            <li>
+              <Check /> A short reply on whether I&apos;m the right fit
+            </li>
+            <li>
+              <Check /> A clear scope and price before any work starts
+            </li>
+            <li>
+              <Check /> One person from first call to launch
+            </li>
+          </ul>
         </div>
       </section>
     </>
